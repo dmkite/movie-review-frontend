@@ -1,3 +1,5 @@
+body{ position: relative;}
+
 #index{
     height:100vh;
     overflow:none;
@@ -237,6 +239,7 @@ footer{
     text-align:center;
     line-height: 50px;
 }
+
 @media screen and (max-width:768px){
     .posterHolder{
         width:200px;
