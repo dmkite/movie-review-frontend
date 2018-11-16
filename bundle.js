@@ -120,8 +120,6 @@ if (window.location.href.endsWith('/create.html')){
     addMultipleListeners('#movieRating', ['mousemove', 'keydown', 'keyup', 'touchmove', 'touch'], create.changeStars)
     document.querySelector('#posterURL').addEventListener('change', function (e) { create.displayPoster(e) })
     document.querySelector('.newMovieForm').addEventListener('submit', function(e){create.createMovie(e)})
-
-    const stars = document.querySelectorAll('.ratingBox i')
     
     document.querySelector('#movieRating').addEventListener('focus', function () { create.changeStarColor('#4db6ac')})
     document.querySelector('#movieRating').addEventListener('focusout', function(){create.changeStarColor('#111')})
@@ -1919,7 +1917,7 @@ process.umask = function() { return 0; };
 
 },{}],31:[function(require,module,exports){
 const axios = require('axios')
-const baseURL = 'http://localhost:3000/movies'
+const baseURL = 'https://movie-review-dmkite.herokuapp.com/movies'
 
 function getAll() {
     return axios.get(baseURL)
