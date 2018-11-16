@@ -1,0 +1,273 @@
+#index{
+    height:100vh;
+    overflow:none;
+    position:fixed;
+    width:100%;
+}
+
+.posterPage{
+    margin-top:75px;
+    padding:0;
+    background-color:#111;
+}
+
+.card-wrapper {
+  width: 20%;
+  padding-bottom:30%;
+  position: relative;
+  -o-perspective: 900px;
+  -webkit-perspective: 900px;
+  -ms-perspective: 900px;
+  perspective: 900px;
+  display:inline-block;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -o-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    -o-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.do-flip {
+    -o-transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+
+.card .card-front, .card .card-back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -o-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    z-index: 2;
+    background-size:100%;
+}
+
+.card .card-front {
+    overflow:hidden;
+}
+
+.card .card-back {
+    background-size:100%;
+    -o-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+
+}
+
+.mainPage{
+    position:fixed;
+    top:0;
+    left:0;
+    background: radial-gradient(#00000090, #000000ff);
+    width:100%;
+    height:100vh;
+    margin-top: 60px;
+    text-align:center;
+    color:white;
+}
+
+h2{
+    display:inline-block;
+    outline:3px solid white;
+    padding:10px;
+    margin-top:25%;
+    width: 75%;
+    color:white;
+}
+ h2 a{
+     color:white;
+ }
+
+
+
+h1{
+    font-size: 24px;
+    margin-top:0;
+    display:inline-block;
+    padding:10px;
+    
+}
+nav{
+    position:fixed;
+    top:0;
+    z-index:9999;
+    min-height:75px;
+}
+
+nav i{
+    font-size:72px;
+    display:inline-block;
+    border:2px solid white;
+    width:50px !important;
+    height:50px !important;
+    line-height:50px;
+    /* margin:0 !important; padding:0 !important; */
+    border-radius:50%;
+    line-height:50px;
+    text-align:center;
+}
+/**********************************************************/
+.deletionAlert, .creationAlert{
+    background-color: #fce4ec;
+    border:2px solid #d81b60;
+    color: #d81b60;
+    animation: slideout 1s ease-out;
+    width:250px;
+    
+}
+
+.creationAlert{
+    background-color: #e0f2f1;
+    color:#00695c;
+    border-color:#00695c;
+}
+
+
+.createHolder{
+    float:right;
+    height:50px;
+    width:250px;
+    padding:0;
+}
+
+@keyframes slideout{
+    0%{margin-left:300px;}
+    100%{margin-left:0;}
+}
+.fadeOut{
+    animation: fadeOut 1s ease-in;
+}
+
+@keyframes fadeOut{
+    0%{opacity:1;}
+    100%{opacity:0}
+}
+
+.hidden{
+    display:none;
+}
+
+.ratingBox{
+    width:150px;
+    position:relative;
+    height:20px;
+    /* margin:0;  */
+    padding:0;
+    margin: 15px 0 30px 0;
+    /* border:1px solid blue; */
+}
+
+.ratingBox input{
+    position:absolute;
+    top:-15px;
+    /* right:-10px; */
+    right:0;
+    height:20px;
+    opacity:0;
+    width:133px;
+}
+
+.posterHolder{
+    height:500px;
+    width:300px;
+    margin:0 auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image:url('https://place-hold.it/300x500/666/fff/000.gif')
+    
+}
+
+body{
+    overflow-x:hidden;
+}
+main{
+    padding-top:120px;
+}
+
+.editPage{
+    position:fixed;
+    top:70px;
+    background-color:white;
+    z-index:999;
+    animation: popIn .5s ease-out;
+    margin:0 auto;
+    width:100%;
+    height:100vh;
+    padding-top:50px;
+    overflow-y: scroll
+}
+
+.newMovieForm button{
+    margin-top:20px;
+    margin-right:20px;
+}
+
+@keyframes popIn{
+    0%{transform:scale(0)}
+    100%{transform:scale(1)}
+}
+
+@keyframes popOut{
+    0%{transform:scale(1)}
+    100%{transform:scale(0)}
+}
+
+footer{
+    background-color:#94877A;
+    position:absolute;
+    bottom:0;
+    min-height:50px;
+    width:100%;
+    color:white;
+    text-align:center;
+    line-height: 50px;
+}
+@media screen and (max-width:768px){
+    .posterHolder{
+        width:200px;
+        height: 333px
+    }
+}
+
+@media screen and (max-width:600px){
+    .create{display:none}
+    nav{position:fixed; top:0;}
+    main{padding-top:100px;}
+    .posterHolder{margin-top:20px;
+    width:100%;
+    padding-bottom:250%;}
+}
+
+@media screen and (max-width: 420px){
+    .container{
+        margin:0;
+    }
+    .edit, .delete{
+        width:25px;
+        text-align:center;
+    }
+    .edit i, .delete i{
+        margin-left:-7px;
+    }
+}
+
+@media screen and (min-width:651px){
+    .card-wrapper{
+        width: 12.5%;
+        padding-bottom:18%;
+    }
+}

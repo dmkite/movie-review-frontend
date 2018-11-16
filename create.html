@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script defer src="bundle.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="nav-wrapper">
+            <a href="index.html"><h1>movie<br>CRUD</h1></a>
+            <ul id="nav-mobile" class="right">
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="create.html">Add</a></li>
+            </ul>
+    
+        </nav>
+    </header>
+    <main>
+        <div class="alertHolder createHolder"></div>
+        <div class="row">
+            <div class="col s12 m8">
+                <h3>Add a movie</h3>
+                <form class="newMovieForm">
+                    <input type="text" id="movieTitle" name="title" required>
+                    <label for="movieTitle">Title</label>
+                    
+                    <input type="text" id="movieDirector" name="director" required>
+                    <label for="movieDirector">Director</label>
+
+                    <input type="text" id="movieYear" name="year" required pattern="[0-9]{4}">
+                    <label for="movieYear">Year</label>
+                    
+                
+                    <div class="ratingBox">
+                        <span class="stars">
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star_border</i>
+                            <i class="material-icons">star_border</i>
+                        </span>
+                        <input id="movieRating" name="rating" type="range" min="1" max="5" step="0.5">
+                        <label for="movieRating">Rating</label>
+                    </div>
+                    
+
+                    <input type="url" id="posterURL" name="poster_url" required>
+                    <label for="posterURL">Movie Poster URL</label>
+                    <br>
+                    <button type="submit" class="submit btn-small waves-effect">submit</button>
+                    <a href="movies.html"><button type="button" class="btn-small waves-effect">cancel</button></a>
+                </form>
+            </div>
+            <div class="col s12 m4">
+                <div class="posterHolder"></div>
+            </div>
+            </div>
+    </main>
+
+</body>
+
+</html>
