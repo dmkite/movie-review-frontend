@@ -1,5 +1,5 @@
 const axios = require('axios')
-const baseURL = 'http://localhost:3000/movies'
+const baseURL = 'https://movie-review-dmkite.herokuapp.com/'
 
 function getAll() {
     return axios.get(baseURL)

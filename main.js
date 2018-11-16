@@ -57,8 +57,6 @@ if (window.location.href.endsWith('/create.html')){
     addMultipleListeners('#movieRating', ['mousemove', 'keydown', 'keyup', 'touchmove', 'touch'], create.changeStars)
     document.querySelector('#posterURL').addEventListener('change', function (e) { create.displayPoster(e) })
     document.querySelector('.newMovieForm').addEventListener('submit', function(e){create.createMovie(e)})
-
-    const stars = document.querySelectorAll('.ratingBox i')
     
     document.querySelector('#movieRating').addEventListener('focus', function () { create.changeStarColor('#4db6ac')})
     document.querySelector('#movieRating').addEventListener('focusout', function(){create.changeStarColor('#111')})
